@@ -1,0 +1,3 @@
+*.secret
+mysql/*
+data/*

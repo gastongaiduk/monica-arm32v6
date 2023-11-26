@@ -1,0 +1,49 @@
+version: "3.9"
+
+services:
+  app:
+    image: arm32v6/monica:fpm-alpine
+    depends_on:
+      - db
+    environment:
+      - APP_KEY='base64:vFGDGFr8X0tufQ8gWkbMyBnjEWNyr25UYSL08f1y8Gk='
+      - DB_HOST=db
+      - DB_USERNAME=monica
+      - DB_PASSWORD_FILE=/run/secrets/db_password
+    volumes:
+      - ./data:/var/www/html/storage
+    restart: always
+    secrets:
+      - db_password
+
+  web:
+    build: ./web
+    ports:
+      - 9090:80
+    depends_on:
+      - app
+    volumes:
+      - ./data:/var/www/html/storage:ro
+    restart: always
+
+  db:
+    image: biarms/mysql:5.5.60-linux-arm32v6
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_root_password
+      - MYSQL_DATABASE=monica
+      - MYSQL_USER=monica
+      - MYSQL_PASSWORD_FILE=/run/secrets/db_password
+    volumes:
+      - ./mysql:/var/lib/mysql
+    restart: always
+    secrets:
+       - db_root_password
+       - db_password
+
+secrets:
+   db_password:
+     file: db_user.secret
+   db_root_password:
+     file: db_root.secret
