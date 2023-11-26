@@ -1,5 +1,5 @@
 # monica-arm32v6
-Build monica on your old Raspberry Pi model 1 using the arm32v6 images available (based on the original image description https://hub.docker.com/r/arm32v6/monica)
+Build [monica](https://github.com/monicahq/monica) on your old [Raspberry Pi 1 Model B+](https://www.raspberrypi.com/products/raspberry-pi-1-model-b-plus/) using the arm32v6 images available (based on the original [docker image description](https://hub.docker.com/_/monica))
 
 Requirements:
 - Docker
