@@ -19,7 +19,7 @@ services:
   web:
     build: ./web
     ports:
-      - 9090:80
+      - 8080:80
     depends_on:
       - app
     volumes:
@@ -28,8 +28,6 @@ services:
 
   db:
     image: biarms/mysql:5.5.60-linux-arm32v6
-    ports:
-      - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_root_password
       - MYSQL_DATABASE=monica
