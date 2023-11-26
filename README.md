@@ -8,11 +8,10 @@ Requirements:
 Generate your own APP_KEY by using the following command and replace the example one on the .yml file:
 - echo -n 'base64:'; openssl rand -base64 32
 
-Database and files will be stored in:
-- data
-- mysql
+Database and files will be stored in folders:
+- data/
+- mysql/
 
-Secrets:
-- You must create the passwords for the monica and root user.
+For secrets you must create your own (one for monica and another one for the root user):
 - For regular user: create a db_user.secret file and place your password inside
 - For root user: create a db_root.secret file and place your password inside
