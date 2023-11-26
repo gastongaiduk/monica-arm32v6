@@ -13,17 +13,13 @@ Database and files will be stored in folders:
 - mysql/
 
 For secrets you must create your own (one for monica and another one for the root user):
-- For regular user: create a db_user.secret file and place your password inside
-- For root user: create a db_root.secret file and place your password inside
+- For regular user: create a **db_user.secret** file and place your password inside
+- For root user: create a **db_root.secret** file and place your password inside
 
 To build and run:
 - docker compose up -d
 
-After a few minutes (you could monitor the status by removing -d from the previous command or execute docker logs) you should be able to access to the instance with {raspberry-ip}:8080
+After a few minutes (you could monitor the status by removing -d from the previous command or execute docker logs) you should be able to access to the instance with {raspberry-ip}:8080. You might need to open ports in order to connect to the application/database from another computer. I'd recommend to use ufw to do so.
 
 To finalize, the official documentation asks you to do:
 - docker exec -it monica-app-1 php artisan setup:production
-
-Notes:
-- This configuration is exposing the database through 3306, this is assuming you'll want to make regular backups of your database using an external tool. If you don't need this or don't wan't to expose it and do the backups from the container itself, then you can remove the ports array from the .yml file under the db section
-- You might need to open ports in order to connect to the application/database from another computer. I'd recommend to use ufw to do so.
