@@ -22,4 +22,4 @@ To build and run:
 After a few minutes (you could monitor the status by removing -d from the previous command or execute docker logs) you should be able to access to the instance with {raspberry-ip}:8080. You might need to open ports in order to connect to the application/database from another computer. I'd recommend to use ufw to do so.
 
 To finalize, the official documentation asks you to do:
-- docker exec -it monica-app-1 php artisan setup:production
+- docker exec -it monica-arm32v6-app-1 php artisan setup:production
