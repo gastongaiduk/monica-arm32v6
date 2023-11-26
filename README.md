@@ -23,3 +23,4 @@ After a few minutes (you could monitor the status by removing -d from the previo
 
 Notes:
 - This configuration is exposing the database through 3306, this is assuming you'll want to make regular backups of your database using an external tool. If you don't need this or don't wan't to expose it and do the backups from the container itself, then you can remove the ports array from the .yml file under the db section
+- You might need to open ports in order to connect to the application/database from another computer. I'd recommend to use ufw to do so.
