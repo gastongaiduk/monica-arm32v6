@@ -19,7 +19,8 @@ services:
 
   web:
     build:
-      - dockerfile: web.dockerfile
+      context: 
+      dockerfile: web.dockerfile
     ports:
       - 8080:80
     depends_on:
