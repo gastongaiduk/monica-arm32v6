@@ -6,18 +6,20 @@ services:
     depends_on:
       - db
     environment:
-      - APP_KEY='base64:vFGDGFr8X0tufQ8gWkbMyBnjEWNyr25UYSL08f1y8Gk='
+      - APP_KEY=ChangeMeBy32KeyLengthOrGenerated
       - DB_HOST=db
       - DB_USERNAME=monica
       - DB_PASSWORD_FILE=/run/secrets/db_password
     volumes:
       - ./data:/var/www/html/storage
+      - ./.env.local:/var/www/html/.env.local
     restart: always
     secrets:
       - db_password
 
   web:
-    build: ./web
+    build:
+      - dockerfile: web.dockerfile
     ports:
       - 8080:80
     depends_on:

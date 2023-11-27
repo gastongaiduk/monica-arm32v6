@@ -8,9 +8,10 @@ Build [monica](https://github.com/monicahq/monica) on your old [Raspberry Pi 1 M
 - data/
 - mysql/
 
-### For secrets you must create your own (one for monica and another one for the root user):
-- For regular user: create a **db_user.secret** file and place your password inside
-- For root user: create a **db_root.secret** file and place your password inside
+### For secrets you must create your own:
+- For mysql regular user: create a **db_user.secret** file and place your password inside
+- For mysql root user: create a **db_root.secret** file and place your password inside
+- Create a *.env.local* file replacing all you need from the original .env file
 
 ### To build and run:
 > docker compose up -d
