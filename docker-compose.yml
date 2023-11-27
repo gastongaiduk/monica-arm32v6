@@ -19,7 +19,7 @@ services:
 
   web:
     build:
-      context: 
+      context: .
       dockerfile: web.dockerfile
     ports:
       - 8080:80
