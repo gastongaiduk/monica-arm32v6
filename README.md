@@ -1,5 +1,5 @@
 # monica-arm32v6
-Build [monica](https://github.com/monicahq/monica) on your old [Raspberry Pi 1 Model B+](https://www.raspberrypi.com/products/raspberry-pi-1-model-b-plus/) using the arm32v6 images available (based on the original [docker image description](https://hub.docker.com/_/monica))
+Build [monica](https://github.com/monicahq/monica) on your old [Raspberry Pi 1 Model B+](https://www.raspberrypi.com/products/raspberry-pi-1-model-b-plus/) using the arm32v6 images available (based on the official [docker image description](https://hub.docker.com/_/monica))
 
 ### Generate your own APP_KEY by using the following command and replace the example one on the .yml file:
 > echo -n 'base64:'; openssl rand -base64 32
@@ -8,7 +8,7 @@ Build [monica](https://github.com/monicahq/monica) on your old [Raspberry Pi 1 M
 - data/
 - mysql/
 
-### For secrets you must create your own:
+### Create your own secrets:
 - For mysql regular user: create a **db_user.secret** file and place your password inside
 - For mysql root user: create a **db_root.secret** file and place your password inside
 - Create a *.env.local* file replacing all you need from the original .env file
